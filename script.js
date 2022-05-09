@@ -25,6 +25,7 @@ const container = document.querySelector(".tituloPrincipal");
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
 let formulario = document.getElementById('idForm');
+let navBuscador = document.getElementById('idFormBuscador')
 
 //funcion saludar(){}
 const saludar = () => {
@@ -47,8 +48,11 @@ boton2.addEventListener('click', ()=>{
 });
 
 //buscador bootstrap
-inputBuscador.addEventListener('input',(e) => {
-    e.preventDefault();
+navBuscador.addEventListener('submit', (event) => {
+    event.preventDefault()
+})
+
+inputBuscador.addEventListener('input',() => {
     let buscador = inputBuscador.value;
     console.log(buscador.toLowerCase());
     console.log(productos.filter(productos => productos.nombre.includes(buscador.toLowerCase())));
